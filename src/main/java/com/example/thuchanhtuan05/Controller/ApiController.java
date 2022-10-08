@@ -102,4 +102,13 @@ public class ApiController {
         }
         return  "Tổng số lương phải trả cho các nhân viên là " + soLuong;
     }
+    //Cau 9
+    @RequestMapping(value = "/manhanvienlaimaybayboeing", method = RequestMethod.GET)
+    public List<String> maNhanVienLaiMayBayBoeing(){
+        List<String> maNhanViens = nhanVienRepository.getMaByLoaiMayBay();
+        if(maNhanViens == null){
+            ResponseEntity.notFound().build();
+        }
+        return  maNhanViens;
+    }
 }
