@@ -93,5 +93,13 @@ public class ApiController {
         }
         return  "Có " + soLoaiMayBay + " loại máy bay Boeing";
     }
-
+    //Cau 8
+    @RequestMapping(value = "/tongsoluongnhanvien", method = RequestMethod.GET)
+    public String tongSoLuongNhanVien(){
+        int soLuong = nhanVienRepository.tinhTongLuong();
+        if(soLuong == 0){
+            ResponseEntity.notFound().build();
+        }
+        return  "Tổng số lương phải trả cho các nhân viên là " + soLuong;
+    }
 }
