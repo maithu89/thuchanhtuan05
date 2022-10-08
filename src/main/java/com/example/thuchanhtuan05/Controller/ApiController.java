@@ -35,4 +35,14 @@ public class ApiController {
         return chuyenBays;
     }
 
+    //Cau 2
+    @RequestMapping(value = "/maybaycotambaylonhon10000", method = RequestMethod.GET)
+    public List<String> mayBayCoTamBayLonHon10000(){
+        List<String> mayBays = mayBayRepository.findLoaiMayBayByTamBay();
+        if(mayBays == null){
+            ResponseEntity.notFound().build();
+        }
+        return mayBays;
+    }
+
 }
