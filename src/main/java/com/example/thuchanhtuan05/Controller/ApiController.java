@@ -44,5 +44,14 @@ public class ApiController {
         }
         return mayBays;
     }
+    //Cau 3
+    @RequestMapping(value = "/timnhanvientheoluong", method = RequestMethod.GET)
+    public List<NhanVien> timNhanVienTheoLuong(){
+        List<NhanVien> nhanViens = nhanVienRepository.findNhanVienByLuong();
+        if(nhanViens == null){
+            ResponseEntity.notFound().build();
+        }
+        return nhanViens;
+    }
 
 }
