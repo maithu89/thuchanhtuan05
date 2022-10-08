@@ -64,4 +64,14 @@ public class ApiController {
         return chuyenBays;
     }
 
+    //Cau 5
+    @RequestMapping(value = "/timchuyenbayboigadenvagadi", method = RequestMethod.GET)
+    public List<ChuyenBay> timChuyenBayBoiGaDenVaGaDi(){
+        List<ChuyenBay> chuyenBays = chuyenBayRepository.findChuyenBayByGaDiVaGaDen();
+        if(chuyenBays == null){
+            ResponseEntity.notFound().build();
+        }
+        return chuyenBays;
+    }
+
 }
