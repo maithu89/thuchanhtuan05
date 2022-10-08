@@ -83,4 +83,15 @@ public class ApiController {
         return  "Có " + soChuyenBay + " chuyến bay xuất phát từ Sài Gòn";
     }
 
+
+    //Cau 7
+    @RequestMapping(value = "/soloaimaybayboeing", method = RequestMethod.GET)
+    public String soLoaiMayBayBoeing(){
+        int soLoaiMayBay = mayBayRepository.findLoaiMayBay();
+        if(soLoaiMayBay == 0){
+            ResponseEntity.notFound().build();
+        }
+        return  "Có " + soLoaiMayBay + " loại máy bay Boeing";
+    }
+
 }
