@@ -169,4 +169,13 @@ public class ApiController {
         return  tenPhiCongs;
     }
 
+    //Cau 16
+    @RequestMapping(value = "/demsophiconglaimaybay", method = RequestMethod.GET)
+    public List<Map<String, Object>> demSoPhiCongLaiMayBay(){
+        List<Map<String, Object>> mayBays = mayBayRepository.demSoPhiCongLaiMayBay();
+        if(mayBays== null){
+            ResponseEntity.notFound().build();
+        }
+        return  mayBays;
+    }
 }
