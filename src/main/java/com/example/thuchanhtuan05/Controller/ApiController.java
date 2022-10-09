@@ -159,4 +159,14 @@ public class ApiController {
         }
         return  chuyenBays;
     }
+    //Cau 15
+    @RequestMapping(value = "/phiconglaimaybayboeing", method = RequestMethod.GET)
+    public List<String> phiCongLaiMayBayBoeing(){
+        List<String> tenPhiCongs = nhanVienRepository.findTenNhanVienLaiBoeing();
+        if(tenPhiCongs == null){
+            ResponseEntity.notFound().build();
+        }
+        return  tenPhiCongs;
+    }
+
 }
