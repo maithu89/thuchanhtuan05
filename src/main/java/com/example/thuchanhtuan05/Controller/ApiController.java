@@ -178,4 +178,14 @@ public class ApiController {
         }
         return  mayBays;
     }
+
+    //Cau 17
+    @RequestMapping(value = "/timchuyenbayditugaadengabvelaigaa", method = RequestMethod.GET)
+    public List<ChuyenBay> timCBDiTuGaADenBVeLaiA(){
+        List<ChuyenBay> chuyenBays = chuyenBayRepository.findCBDiTuGaADenBVeLaiA();
+        if(chuyenBays== null){
+            ResponseEntity.notFound().build();
+        }
+        return  chuyenBays;
+    }
 }
