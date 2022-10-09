@@ -150,4 +150,13 @@ public class ApiController {
         }
         return  loaiMBs;
     }
+    // Cau 14
+    @RequestMapping(value = "/chuyenbaythuchienboiairbusa320/{loaiMB}", method = RequestMethod.GET)
+    public List<ChuyenBay> chuyenBayThucHienBoiAirbusA320(@PathVariable("loaiMB") String loaiMB){
+        List<ChuyenBay> chuyenBays = chuyenBayRepository.findChuyenBayByMayBayAirbusA320(loaiMB);
+        if(chuyenBays == null || chuyenBays.size() == 0){
+            ResponseEntity.notFound().build();
+        }
+        return  chuyenBays;
+    }
 }
