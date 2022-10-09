@@ -132,5 +132,13 @@ public class ApiController {
         }
         return  maMayBays;
     }
-
+    //Cau 12
+    @RequestMapping(value = "/maphicongvualaiboeingvaairbus", method = RequestMethod.GET)
+    public List<String> maPhiCongVuaLaiBoeingVuaLaiAirbus(){
+        List<String> maPhiCongs = nhanVienRepository.getMaByLoaiMB();
+        if(maPhiCongs == null){
+            ResponseEntity.notFound().build();
+        }
+        return  maPhiCongs;
+    }
 }
