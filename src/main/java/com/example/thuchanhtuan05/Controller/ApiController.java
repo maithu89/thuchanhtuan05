@@ -188,4 +188,13 @@ public class ApiController {
         }
         return  chuyenBays;
     }
+    //Cau 18
+    @RequestMapping(value = "/demchuyenbayditugaadenbvelaia", method = RequestMethod.GET)
+    public List<Map<String, Object>> countCBDiTuGaADenBVeLaiGaA(){
+        List<Map<String, Object>> chuyenBays = chuyenBayRepository.countCBDiTuGaADenBVeLaiA();
+        if(chuyenBays == null){
+            ResponseEntity.notFound().build();
+        }
+        return  chuyenBays;
+    }
 }
